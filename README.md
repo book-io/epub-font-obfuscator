@@ -5,24 +5,30 @@ Implements the algorithm defined in the EPUB 3 specification: http://www.idpf.or
 
 Uses code cribbed from this article: http://blogs.adobe.com/digitaleditions/2009/05/font_mangling_code_available_f.html
 
+## Unobfuscate a directory of fonts:
+
+```
+for font in fonts/*; do java -jar dist/epub-font-obfuscator.jar "some-epub-id" $font; done
+```
+
 ## Usage
 
 From the command line do:
 
 ~~~~
-java -jar epub-font-obfuscator.jar "some-epub-id" "fonts/myfont.ttf"
+java -jar dist/epub-font-obfuscator.jar "some-epub-id" "fonts/myfont.ttf"
 ~~~~
 
 or 
 
 ~~~~
-java -jar epub-font-obfuscator.jar "some-epub-id" "fonts/myfont.ttf" "fonts/obfuscated"
+java -jar dist/epub-font-obfuscator.jar "some-epub-id" "fonts/myfont.ttf" "fonts/obfuscated"
 ~~~~
 
 or
 
 ~~~~
-java -jar epub-font-obfuscator.jar "some-epub-id" "fonts/myfont.ttf" "fonts/myfont-obfuscated.ttf"
+java -jar dist/epub-font-obfuscator.jar "some-epub-id" "fonts/myfont.ttf" "fonts/myfont-obfuscated.ttf"
 ~~~~
 
 The arguments are:
@@ -34,3 +40,5 @@ The arguments are:
 Note that the obfuscation key must match what is in the EPUB that will contain the obfuscated font as EPUB readers use the EPUB identifier in order to unobfuscate any obfuscated fonts embedded in the EPUB. It also means that you must create new obfuscated versions of a font for each EPUB it is included in.
 
 NOTE: You can unobfuscate a font by applying the obfuscator to it with the same key used to obfuscate it originally.
+
+

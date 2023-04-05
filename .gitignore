@@ -1,5 +1,4 @@
 .settings/
-lib/
 test/java/resources/fonts/obfuscated/
 *_obfuscated.ttf
 *.class
@@ -8,7 +7,6 @@ test/java/resources/fonts/obfuscated/
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
